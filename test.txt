@@ -1,0 +1,237 @@
+INSERT INTO  address_icons
+(image)
+VALUES('');
+INSERT INTO  admin_password_resets
+(email, token, created_at)
+VALUES('', '', '');
+INSERT INTO  admins
+(name, email, password, otp, is_verified, status, role_id, token, remember_token, created_at, updated_at)
+VALUES('', '', '', '', 0, 0, 0, '0', '', '', '');
+INSERT INTO  area_translations
+(name, area_id, locale, created_at, updated_at)
+VALUES('', 0, '', '', '');
+INSERT INTO  areas
+(`default`, status, created_at, updated_at)
+VALUES('0', 0, '', '');
+INSERT INTO  attribute_translations
+(locale, name, attribute_id)
+VALUES('', '', 0);
+INSERT INTO  `attributes`
+(code, `type`, created_at, updated_at)
+VALUES('', '', '', '');
+INSERT INTO  avatars
+(image, gender, created_at, updated_at)
+VALUES('', '', '', '');
+INSERT INTO  banners
+(area_id, name, start_date, end_date, `position`, action_id, actionable_type, `section`, status, `default`, image_ar, image_en, created_at, updated_at)
+VALUES(0, '', '', '', 0, 0, '', 'sale', 0, 0, '', '', '', '');
+INSERT INTO  brand_translations
+(name, locale, brand_id)
+VALUES('', '', 0);
+INSERT INTO  brands
+(`position`, image, status, created_at, updated_at)
+VALUES(1, '', 1, '', '');
+INSERT INTO  categories
+(`position`, image, thumb, status, created_at, updated_at)
+VALUES(1, '', '', 1, '', '');
+INSERT INTO  category_sub_categories
+(category_id, sub_category_id, created_at, updated_at)
+VALUES(0, 0, '', '');
+INSERT INTO  category_translations
+(name, locale, category_id)
+VALUES('', '', 0);
+INSERT INTO  channels
+(name, created_at, updated_at)
+VALUES('', '', '');
+INSERT INTO  collector_device_tokens
+(collector_id, token, created_at, updated_at)
+VALUES(0, '', '', '');
+INSERT INTO  collectors
+(area_id, warehouse_id, name, address, image, phone_private, phone_work, username, email, password, availability, status, created_at, updated_at, id_number, image_id)
+VALUES(0, 0, '', '', '', '', '', '', '', '', 'offline', 0, '', '', '', '');
+INSERT INTO  countries
+(code, name)
+VALUES('', '');
+INSERT INTO  country_state_translations
+(locale, name, country_state_id)
+VALUES('', '', 0);
+INSERT INTO  country_states
+(country_code, code, default_name, country_id)
+VALUES('', '', '', 0);
+INSERT INTO  country_translations
+(locale, name, country_id)
+VALUES('', '', 0);
+INSERT INTO  customer_addresses
+(customer_id, area_id, name, address, floor_no, apartment_no, building_no, landmark, latitude, longitude, phone, is_default, created_at, updated_at)
+VALUES(0, 0, '', '', '', '', '', '', 0, 0, '', 0, '', '');
+INSERT INTO  customer_device_tokens
+(customer_id, token, created_at, updated_at)
+VALUES(0, '', '', '');
+INSERT INTO  customer_login_otps
+(customer_id, otp, expired_at, created_at)
+VALUES(0, '', '', '');
+INSERT INTO  customer_social_accounts
+(provider_name, provider_id, customer_id, created_at, updated_at)
+VALUES('', '', 0, '', '');
+INSERT INTO  customers
+(channel_id, name, email, gender, date_of_birth, phone, landline, avatar, notes, wallet, is_flagged, otp_verified, status, subscribed_to_news_letter, created_at, updated_at)
+VALUES(0, '', '', 0, '', '', '', '', '', 0.00, 0, 0, 1, 0, '', '');
+INSERT INTO  driver_device_tokens
+(driver_id, token, created_at, updated_at)
+VALUES(0, '', '', '');
+INSERT INTO  driver_motor
+(driver_id, motor_id, image, motor_condition, status, created_at, updated_at)
+VALUES(0, 0, '', '', 1, '', '');
+INSERT INTO  driver_status_logs
+(driver_id, period, status_log_date, availability, created_at, updated_at)
+VALUES(0, 0, '', '', '', '');
+INSERT INTO  drivers
+(area_id, warehouse_id, name, address, image, image_id, id_number, liecese_validity_date, username, phone_private, phone_work, email, password, api_token, token, remember_token, availability, is_online, status, created_at, updated_at, wallet)
+VALUES(0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'idle', 0, 0, '', '', 0.00);
+INSERT INTO  failed_jobs
+(`connection`, queue, payload, `exception`, failed_at)
+VALUES('', '', '', '', CURRENT_TIMESTAMP);
+INSERT INTO  inventory_adjustment_products
+(inventory_adjustment_id, product_id, sku, qty, note, status, created_at, updated_at)
+VALUES(0, 0, '', 0, '', 1, '', '');
+INSERT INTO  inventory_adjustments
+(warehouse_id, status, created_at, updated_at)
+VALUES(0, 1, '', '');
+INSERT INTO  inventory_areas
+(area_id, product_id, init_total_qty, total_qty, created_at, updated_at)
+VALUES(0, 0, 0, 0, '', '');
+INSERT INTO  inventory_products
+(sku, prod_date, exp_date, qty, cost_before_discount, cost, amount, product_id, warehouse_id, area_id, created_at, updated_at)
+VALUES('', '', '', 0, 0, 0, 0, 0, 0, 0, '', '');
+INSERT INTO  inventory_transaction_products
+(qty, inventory_transaction_id, product_id, sku, inventory_product_id, created_at, updated_at)
+VALUES(0, 0, 0, '', 0, '', '');
+INSERT INTO  inventory_transactions
+(from_warehouse_id, to_warehouse_id, status, transaction_type, created_at, updated_at)
+VALUES(0, 0, 1, 'outside', '', '');
+INSERT INTO  inventory_warehouses
+(product_id, warehouse_id, area_id, qty, can_order, created_at, updated_at)
+VALUES(0, 0, 0, 0, 1, '', '');
+INSERT INTO  invoice_items
+(name, description, sku, qty, price, base_price, total, base_total, discount_percent, discount_amount, base_discount_amount, tax_amount, base_tax_amount, product_id, product_type, order_item_id, invoice_id, parent_id, additional, created_at, updated_at)
+VALUES('', '', '', 0, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, '', 0, 0, 0, ?, '', '');
+INSERT INTO  invoices
+(increment_id, state, email_sent, total_qty, base_currency_code, channel_currency_code, order_currency_code, sub_total, base_sub_total, grand_total, base_grand_total, shipping_amount, base_shipping_amount, tax_amount, base_tax_amount, discount_amount, base_discount_amount, order_id, order_address_id, created_at, updated_at)
+VALUES('', '', 0, 0, '', '', '', 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, '', '');
+INSERT INTO  jobs
+(queue, payload, attempts, reserved_at, available_at, created_at)
+VALUES('', '', 0, 0, 0, 0);
+INSERT INTO  locales
+(code, name, `default`, direction, created_at, updated_at)
+VALUES('', '', '0', 'ltr', '', '');
+INSERT INTO  migrations
+(migration, batch)
+VALUES('', 0);
+INSERT INTO  motors
+(area_id, chassis_no, license_plate_no, `condition`, image, status, created_at, updated_at)
+VALUES(0, '', '', '', '', 1, '', '');
+INSERT INTO  order_address
+(name, address, floor_no, apartment_no, building_no, landmark, latitude, longitude, phone, order_id)
+VALUES('', '', '', '', '', '', '', '', '', 0);
+INSERT INTO  order_comments
+(comment, customer_notified, order_id, created_at, updated_at)
+VALUES('', 0, 0, '', '');
+INSERT INTO  order_driver_dispatches
+(dispatched_at, status, reason, `rank`, delivery_time, trial, order_id, warehouse_id, driver_id, created_at, updated_at)
+VALUES(0, 'not_send', '', 0, 0, 0, 0, 0, 0, '', '');
+INSERT INTO  order_items
+(sku, weight, qty_ordered, qty_shipped, qty_invoiced, qty_canceled, qty_refunded, price, base_price, total, base_total, total_invoiced, base_total_invoiced, amount_refunded, base_amount_refunded, discount_percent, discount_amount, base_discount_amount, discount_invoiced, base_discount_invoiced, discount_refunded, base_discount_refunded, tax_percent, tax_amount, base_tax_amount, tax_amount_invoiced, base_tax_amount_invoiced, tax_amount_refunded, base_tax_amount_refunded, product_id, order_id, additional, created_at, updated_at)
+VALUES('', 0.0000, 0, 0, 0, 0, 0, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, 0, ?, '', '');
+INSERT INTO  order_logs_actual
+(order_id, aggregator_id, log_type, log_time)
+VALUES(0, 0, '', '');
+INSERT INTO  order_logs_estimated
+(order_id, aggregator_id, log_type, log_time)
+VALUES(0, 0, '', 0);
+INSERT INTO  order_payment
+(`method`, method_title, order_id, created_at, updated_at)
+VALUES('', '', 0, '', '');
+INSERT INTO  order_reviews
+(rating, comment, status, order_id, customer_id, created_at, updated_at)
+VALUES(0, '', '', 0, 0, '', '');
+INSERT INTO  orders
+(increment_id, status, flagged, coupon_code, items_count, items_shipped_count, items_qty_ordered, items_qty_shipped, sub_total, final_total, discount_type, discount, tax_amount, delivery_chargs, note, customer_id, channel_id, area_id, warehouse_id, driver_id, collector_id, aggregator_id, created_at, updated_at)
+VALUES(0, 'pending', 0, '', 0, 0, 0, 0, 0.0000, 0.0000, '', 0.0000, 0.0000, 0, '', 0, 0, 0, 0, 0, 0, 0, '', '');
+INSERT INTO  password_resets
+(email, token, created_at)
+VALUES('', '', '');
+INSERT INTO  product_attribute_values
+(locale, text_value, boolean_value, integer_value, float_value, datetime_value, date_value, json_value, product_id, attribute_id)
+VALUES('', '', 0, 0, 0, '', '', ?, 0, 0);
+INSERT INTO  product_sub_categories
+(product_id, sub_category_id)
+VALUES(0, 0);
+INSERT INTO  product_translations
+(name, description, locale, product_id)
+VALUES('', '', '', 0);
+INSERT INTO  products
+(barcode, image, thumb, featured, status, returnable, price, cost, tax, weight, width, height, `length`, brand_id, unit_id, unit_value, created_at, updated_at)
+VALUES('', '', '', 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '');
+INSERT INTO  purchase_order_products
+(sku, prod_date, exp_date, qty, cost_before_discount, cost, amount, purchase_order_id, product_id, warehouse_id, area_id, created_at, updated_at)
+VALUES('', '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '');
+INSERT INTO  purchase_orders
+(invoice_no, purchase_order_no, is_draft, sub_total_cost, discount_type, discount, total_cost, area_id, warehouse_id, supplier_id, created_at, updated_at)
+VALUES('', '', 0, 0, '', 0, 0, 0, 0, 0, '', '');
+INSERT INTO  refund_items
+(name, description, sku, qty, price, base_price, total, base_total, tax_amount, base_tax_amount, discount_percent, discount_amount, base_discount_amount, product_id, product_type, order_item_id, refund_id, parent_id, additional, created_at, updated_at)
+VALUES('', '', '', 0, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, '', 0, 0, 0, ?, '', '');
+INSERT INTO  refunds
+(increment_id, state, email_sent, total_qty, base_currency_code, channel_currency_code, order_currency_code, adjustment_refund, base_adjustment_refund, adjustment_fee, base_adjustment_fee, sub_total, base_sub_total, grand_total, base_grand_total, shipping_amount, base_shipping_amount, tax_amount, base_tax_amount, discount_percent, discount_amount, base_discount_amount, order_id, created_at, updated_at)
+VALUES('', '', 0, 0, '', '', '', 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0, '', '');
+INSERT INTO  roles
+(name, description, permission_type, permissions, created_at, updated_at)
+VALUES('', '', '', ?, '', '');
+INSERT INTO  snapshots
+(aggregate_uuid, aggregate_version, state, created_at, updated_at)
+VALUES('', 0, ?, '', '');
+INSERT INTO  stored_events
+(aggregate_uuid, aggregate_version, event_class, event_properties, meta_data, created_at)
+VALUES('', 0, '', ?, ?, '');
+INSERT INTO  sub_categories
+(`position`, image, thumb, status, created_at, updated_at)
+VALUES(1, '', '', 1, '', '');
+INSERT INTO  sub_category_translations
+(name, locale, sub_category_id)
+VALUES('', '', 0);
+INSERT INTO  supplier_areas
+(supplier_id, area_id)
+VALUES(0, 0);
+INSERT INTO  supplier_products
+(supplier_id, product_id, brand_id)
+VALUES(0, 0, 0);
+INSERT INTO  suppliers
+(name, email, work_phone, mobile_phone, company_name, address_title, address_city, address_state, address_zip, address_phone, address_fax, remarks, status, country_id, created_at, updated_at)
+VALUES('', '', '', '', '', '', '', '', '', '', '', '', 1, 0, '', '');
+INSERT INTO  tax_categories
+(code, name, description, created_at, updated_at)
+VALUES('', '', '', '', '');
+INSERT INTO  tax_categories_tax_rates
+(tax_category_id, tax_rate_id, created_at, updated_at)
+VALUES(0, 0, '', '');
+INSERT INTO  tax_rates
+(identifier, is_zip, zip_code, zip_from, zip_to, state, country, tax_rate, created_at, updated_at)
+VALUES('', 0, '', '', '', '', '', 0, '', '');
+INSERT INTO  unit_translations
+(name, locale, unit_id)
+VALUES('', '', 0);
+INSERT INTO  units
+(measure, created_at, updated_at)
+VALUES('', '', '');
+INSERT INTO  users
+(name, email, password, remember_token, created_at, updated_at)
+VALUES('', '', '', '', '', '');
+INSERT INTO  warehouse_translations
+(name, description, locale, warehouse_id)
+VALUES('', '', '', 0);
+INSERT INTO  warehouses
+(contact_name, contact_email, contact_number, address, latitude, longitude, is_main, status, area_id, created_at, updated_at)
+VALUES('', '', '', '', 0, 0, 0, 1, 0, '', '');
+INSERT INTO  wishlist
+(channel_id, product_id, customer_id, item_options, moved_to_cart, shared, time_of_moving, created_at, updated_at, additional)
+VALUES(0, 0, 0, ?, '', 0, '', '', '', ?);

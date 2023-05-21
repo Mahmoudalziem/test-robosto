@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/laravel-area",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@webkul.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Area\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Area\\Providers\\AreaServiceProvider"
+            ],
+            "aliases": { }
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Http;
+
+use App\Http\Middleware\Cors;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel
+{
+
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * These middleware are run during every request to your application.
+     *
+     * @var array
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        Cors::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class
+        ],
+        'api' => [
+            'throttle:500,1',
+            'bindings',
+            \Webkul\Core\Http\Middleware\Localization::class
+        ],
+    ];
+
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'shadow.area' => \Webkul\Core\Http\Middleware\ShadowAreaMiddleware::class,
+        'search.trim' => \Webkul\Core\Http\Middleware\SearchTrimMIddleware::class,
+        'admin.must.be.active' => \Webkul\Core\Http\Middleware\MustBeActive::class,
+        'customer.must.be.active' => \Webkul\Customer\Http\Middleware\CustomerMustBeActive::class,
+        'driver.must.be.active' => \Webkul\Driver\Http\Middleware\DriverMustBeActive::class,
+        'admin.permission.gate' => \Webkul\Core\Http\Middleware\PermissionGate::class,
+        // ...
+
+    ];
+}

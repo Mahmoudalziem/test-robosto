@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/laravel-Motor",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahmoud Shedeed",
+            "email": "mahmoud.shedeed@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Motor\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Motor\\Providers\\MotorServiceProvider"
+            ],
+            "aliases": { }
+        }
+    },
+    "minimum-stability": "dev"
+}

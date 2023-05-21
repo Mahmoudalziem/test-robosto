@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/laravel-Driver",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@webkul.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Driver\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Driver\\Providers\\DriverServiceProvider"
+            ],
+            "aliases": { }
+        }
+    },
+    "minimum-stability": "dev"
+}
